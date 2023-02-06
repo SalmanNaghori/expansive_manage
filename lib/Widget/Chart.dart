@@ -1,6 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:expansive_manage/Widget/chart_bar.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:path/path.dart' as Path;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:expansive_manage/model/transtion.dart';
@@ -29,7 +28,7 @@ class Chart extends StatelessWidget {
         'day': DateFormat.E().format(weekDay).substring(0, 1),
         'amount': totalSum
       };
-    });
+    }).reversed.toList();
   }
 
   double get totalSpending {
@@ -39,7 +38,7 @@ class Chart extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext Context) {
+  Widget build(BuildContext context) {
     return Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
